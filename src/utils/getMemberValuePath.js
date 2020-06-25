@@ -6,7 +6,7 @@
  *
  * @flow
  */
-import { namedTypes as t } from 'ast-types';
+import { namedTypes as t } from '@motiz88/ast-types';
 import getClassMemberValuePath from './getClassMemberValuePath';
 import getMemberExpressionValuePath from './getMemberExpressionValuePath';
 import getPropertyValuePath from './getPropertyValuePath';
@@ -35,7 +35,7 @@ const LOOKUP_METHOD = {
   [t.ClassExpression.name]: getClassMemberValuePath,
 };
 
-function isSupportedDefinitionType({ node }) {
+export function isSupportedDefinitionType({ node }: NodePath) {
   return (
     t.ObjectExpression.check(node) ||
     t.ClassDeclaration.check(node) ||

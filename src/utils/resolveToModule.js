@@ -7,7 +7,7 @@
  * @flow
  */
 
-import { namedTypes as t } from 'ast-types';
+import { namedTypes as t } from '@motiz88/ast-types';
 import match from './match';
 import resolveToValue from './resolveToValue';
 
@@ -31,7 +31,7 @@ export default function resolveToModule(path: NodePath): ?string {
       return resolveToModule(path.get('callee'));
     case t.Identifier.name:
     case t.JSXIdentifier.name: {
-      const valuePath = resolveToValue(path);
+      const valuePath = resolveToValue(path, false);
       if (valuePath !== path) {
         return resolveToModule(valuePath);
       }

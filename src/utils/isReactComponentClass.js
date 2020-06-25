@@ -7,7 +7,7 @@
  * @flow
  */
 
-import { namedTypes as t } from 'ast-types';
+import { namedTypes as t } from '@motiz88/ast-types';
 import isReactModuleName from './isReactModuleName';
 import match from './match';
 import resolveToModule from './resolveToModule';
@@ -40,7 +40,7 @@ export default function isReactComponentClass(path: NodePath): boolean {
   }
 
   // React.Component or React.PureComponent
-  const superClass = resolveToValue(path.get('superClass'));
+  const superClass = resolveToValue(path.get('superClass'), false);
   if (
     match(superClass.node, { property: { name: 'Component' } }) ||
     match(superClass.node, { property: { name: 'PureComponent' } })

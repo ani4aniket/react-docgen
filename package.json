@@ -1,13 +1,13 @@
 {
-  "name": "react-docgen",
-  "version": "5.3.0",
+  "name": "@motiz88/react-native-docgen",
+  "version": "0.0.2",
   "description": "A CLI and toolkit to extract information from React components for documentation generation.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reactjs/react-docgen.git"
+    "url": "git+https://github.com/motiz88/react-docgen.git"
   },
   "bugs": {
-    "url": "https://github.com/reactjs/react-docgen/issues"
+    "url": "https://github.com/motiz88/react-docgen/issues"
   },
   "bin": {
     "react-docgen": "bin/react-docgen.js"
@@ -43,11 +43,12 @@
   "dependencies": {
     "@babel/core": "^7.7.5",
     "@babel/runtime": "^7.7.6",
-    "ast-types": "^0.13.2",
+    "@motiz88/ast-types": "^0.13.3",
     "commander": "^2.19.0",
     "doctrine": "^3.0.0",
     "neo-async": "^2.6.1",
     "node-dir": "^0.1.10",
+    "resolve": "^1.10.1",
     "strip-indent": "^3.0.0"
   },
   "devDependencies": {
@@ -83,5 +84,8 @@
       "src"
     ],
     "testRegex": "/__tests__/.*-test\\.js$"
+  },
+  "browser": {
+    "./dist/utils/resolveImportedValue.js": "./dist/utils/resolveImportedValue.browser.js"
   }
 }
