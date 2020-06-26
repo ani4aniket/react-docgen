@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: yarn install
+      - run: yarn install --frozen-lockfile
       - run: yarn test
 
   publish-gpr:
@@ -26,10 +26,10 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
           scope: '@ani4aniket'
-      - run: yarn install
+      - run: yarn install --frozen-lockfile
       - run: git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com" && git config --global user.name "$GITHUB_ACTOR"
       - run: yarn version --minor
       - run: git push --tags && git push
-      - run: yarn publish
+      - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
