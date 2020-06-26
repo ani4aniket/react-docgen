@@ -1,6 +1,6 @@
 {
   "name": "@ani4aniket/react-native-docgen",
-  "version": "0.0.2",
+  "version": "1.0.1",
   "description": "A CLI and toolkit to extract information from React components for documentation generation.",
   "repository": {
     "type": "git",
@@ -11,6 +11,9 @@
   },
   "bin": {
     "react-docgen": "bin/react-docgen.js"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "files": [
     "bin",
