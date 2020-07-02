@@ -1,7 +1,7 @@
 import React from 'react';
 import Panel from './CodeMirrorPanel';
 import Header from './Header';
-import { parse } from 'react-docgen';
+import { parse } from '@ani4aniket/react-native-docgen';
 
 const codeSample = `import React, { Component } from 'react';
 import PropTypes from 'prop-types';
